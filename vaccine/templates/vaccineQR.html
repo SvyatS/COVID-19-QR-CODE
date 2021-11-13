@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>QR Code</title>
-    <script type="text/javascript" src="{% static 'js/qrcode/jquery.qrcode.min.js' %}"></script>
+<!--    <script type="text/javascript" src="jquery.qrcode.min.js"></script>-->
 </head>
 <body>
     <div id="output"></div>
@@ -12,7 +13,7 @@
     <script type="text/javascript" src="{% static 'js/qrcode/jquery.qrcode.min.js' %}"></script>
     <script>
     jQuery(function(){
-        jQuery('#output').qrcode("{{url}}");
+        jQuery('#output').qrcode('{{ url }}');
     })
     </script>
 </body>
