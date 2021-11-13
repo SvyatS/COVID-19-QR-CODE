@@ -4,10 +4,10 @@ from .models import UserData
 from .utils import *
 
 
-
-
 class VaccinePageView(View):
-    def get(self, request, pk):
+    @staticmethod
+    def get(request, pk):
         user = UserData.objects.get(id=pk)
         content = vaccine_structure(user)
+        print(content)
         return render(request, 'vaccinePage.html', content)

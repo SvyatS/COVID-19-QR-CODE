@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="{% static 'css/vaccinePageCss.css' %}" type="text/css" />
 </head>
 <body>
-    Русские вперед
+    {{ vaccine_id }} <br>
+    {{ valid_until }} <br>
+    {{ full_name.first_name }} {{ full_name.middle_name }}  {{ full_name.last_name }} <br>
+    {{ date_birthday }} <br>
+    {{ passport.serial }} {{ passport.number }} <br>
 </body>
 </html>
