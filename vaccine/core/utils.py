@@ -27,7 +27,7 @@ def vaccine_structure(user):
         "full_name": name,
         "date_birthday": date_birthday,
         "valid_until": valid_until,
-        "vaccine_id": user.vaccine_id,
+        "vaccine_id": '{} {} {} {}'.format(user.vaccine_id[:4], user.vaccine_id[4: 8], user.vaccine_id[8:12], user.vaccine_id[12:]),
         "passport": {
             "serial": hidden_passport_serial(user.passport_series),
             "number": hidden_passport_number(user.passport_number)

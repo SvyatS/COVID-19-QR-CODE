@@ -23,7 +23,7 @@ class VaccineQrCodeView(View):
         try:
             # request.get_host()
             url = "http://" + socket.gethostbyname(socket.gethostname()) + ":8000" + "/covid-cert/status/" + str(pk)
-            print()
+            print(socket.gethostbyname(socket.gethostname()))
             return render(request, 'vaccineQR.html', {"url": url})
         except Exception as e:
             return HttpResponseNotFound('<h1>QR code not found</h1>')
