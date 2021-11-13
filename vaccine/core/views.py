@@ -14,3 +14,14 @@ class VaccinePageView(View):
             return render(request, 'vaccinePage.html', content)
         except Exception as e:
             return HttpResponseNotFound('<h1>User not found</h1>')
+
+
+class VaccineQrCodeView(View):
+    @staticmethod
+    def get(request, pk):
+        try:
+            print(request.get_host() + "/covid-cert/status/" + str(pk))
+            url = request.get_host() + "/covid-cert/status/" + str(pk)
+            return render(request, 'vaccineQR.html', {"url": url})
+        except Exception as e:
+            return HttpResponseNotFound('<h1>User not found</h1>')
