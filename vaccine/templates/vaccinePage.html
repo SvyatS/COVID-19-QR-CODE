@@ -7,10 +7,32 @@
     <link rel="stylesheet" href="{% static 'css/vaccinePageCss.css' %}" type="text/css" />
 </head>
 <body>
-    {{ vaccine_id }} <br>
-    {{ valid_until }} <br>
-    {{ full_name.first_name }} {{ full_name.middle_name }}  {{ full_name.last_name }} <br>
-    {{ date_birthday }} <br>
-    {{ passport.serial }} {{ passport.number }} <br>
+
+    <div class="content">
+        <div class="header">
+            <div class="header__logo"><a href="">ГОСУСЛУГИ</a></div>
+            <div class="header__change-language">
+                <div class="language">
+                    <div class="language-icon"></div>
+                    <span>RUS</span></div>
+            </div>
+        </div>
+        <div class="sertificate-block">
+            <div class="sertificate-block__title">Сертификат COVID-19</div>
+            <div class="sertificate-block__status">Действителен</div>
+            <div class="sertificate-block__vaccine-id">№ {{ vaccine_id }}</div>
+        </div>
+        <div class="valid-time">
+            <div class="valid-time__until">Действует до: {{ valid_until }}</div>
+        </div>
+        <div class="person-data">
+            <div class="person-data__name">{{ full_name.first_name }} {{ full_name.middle_name }}  {{ full_name.last_name }}</div>
+            <div class="person-data__birthday"><span>Дата рождения:</span> {{ date_birthday }}</div>
+            <div class="person-data__passport"><span>Паспорт:</span> {{ passport.serial }} {{ passport.number }}</div>
+        </div>
+        <div class="close-btn">
+            <a href="">Закрыть</a>
+        </div>
+    </div>
 </body>
 </html>
