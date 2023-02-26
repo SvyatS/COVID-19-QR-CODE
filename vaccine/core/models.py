@@ -1,4 +1,5 @@
 import random
+import uuid
 from django.db import models
 
 
@@ -14,6 +15,8 @@ class UserData(models.Model):
     )
 
     _ADDRESS = 'Томская обл, г Томск, ул Источная, д. 42, кв.2'
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     first_name = models.CharField('Name', max_length=128)
     middle_name = models.CharField('Middle name', max_length=128)
     surname = models.CharField('Surname', max_length=128)
